@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+part 'count.g.dart';
 
-class Count extends ChangeNotifier {
-  int count = 0;
-
-  void countIncreamented() {
-    count += 1;
-    notifyListeners();
-  }
+@HiveType(typeId: 1)
+class Count {
+  @HiveField(0)
+  int count;
+  Count({required this.count});
 }
